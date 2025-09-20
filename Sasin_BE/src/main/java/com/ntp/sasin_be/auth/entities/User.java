@@ -52,6 +52,10 @@ public class User extends BaseEntity implements UserDetails {
 
     private boolean enabled = false;
 
+    // 👇hỗ trợ OAuth2
+    private String provider;   // GOOGLE, FACEBOOK, GITHUB, LOCAL
+    private String providerId; // id user bên provider
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orders;
 
