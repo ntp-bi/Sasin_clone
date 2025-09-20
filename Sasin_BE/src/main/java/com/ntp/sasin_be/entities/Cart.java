@@ -1,5 +1,6 @@
 package com.ntp.sasin_be.entities;
 
+import com.ntp.sasin_be.auth.entities.User;
 import com.ntp.sasin_be.enums.CartStatus;
 import jakarta.persistence.*;
 import lombok.*;

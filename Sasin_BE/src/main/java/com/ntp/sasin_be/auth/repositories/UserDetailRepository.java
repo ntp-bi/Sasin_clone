@@ -1,6 +1,6 @@
-package com.ntp.sasin_be.repositories;
+package com.ntp.sasin_be.auth.repositories;
 
-import com.ntp.sasin_be.entities.User;
+import com.ntp.sasin_be.auth.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

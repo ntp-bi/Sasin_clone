@@ -1,5 +1,6 @@
 package com.ntp.sasin_be.entities;
 
+import com.ntp.sasin_be.auth.entities.User;
 import com.ntp.sasin_be.enums.OrderStatus;
 import com.ntp.sasin_be.enums.PaymentMethod;
 import com.ntp.sasin_be.enums.PaymentStatus;

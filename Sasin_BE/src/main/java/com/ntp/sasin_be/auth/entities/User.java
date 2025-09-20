@@ -1,5 +1,7 @@
-package com.ntp.sasin_be.entities;
+package com.ntp.sasin_be.auth.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.ntp.sasin_be.entities.*;
 import com.ntp.sasin_be.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
@@ -7,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,23 +27,30 @@ public class User extends BaseEntity implements UserDetails {
     private Long id;
 
     @Column(nullable = false)
+    private String firstName;
+
+    @Column(nullable = false)
+    private String lastName;
+
+    @Column(nullable = false)
     private String fullName;
 
     @Column(unique = true, nullable = false)
     private String email;
 
+    private boolean gender;
+
     @Column(nullable = false)
     private String password;
 
-    private String phoneNumber;
+    private LocalDate dateOfBirth;
 
-    @Lob
-    private String address; // default address text
+    private String verificationCode;
 
     @Enumerated(EnumType.STRING)
-    private Role role = Role.USER;
+    private Role role;
 
-    private boolean enabled = true;
+    private boolean enabled = false;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orders;

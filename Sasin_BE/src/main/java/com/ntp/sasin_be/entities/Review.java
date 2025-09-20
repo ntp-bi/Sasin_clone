@@ -1,5 +1,6 @@
 package com.ntp.sasin_be.entities;
 
+import com.ntp.sasin_be.auth.entities.User;
 import jakarta.persistence.*;
 import lombok.*;
 

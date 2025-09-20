@@ -1,4 +1,4 @@
-package com.ntp.sasin_be.dto;
+package com.ntp.sasin_be.auth.dto;
 
 import lombok.*;
 
