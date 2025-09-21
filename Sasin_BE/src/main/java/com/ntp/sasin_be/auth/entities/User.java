@@ -1,6 +1,5 @@
 package com.ntp.sasin_be.auth.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ntp.sasin_be.entities.*;
 import com.ntp.sasin_be.enums.Role;
 import jakarta.persistence.*;
@@ -70,7 +69,7 @@ public class User extends BaseEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
     }
 
     @Override
