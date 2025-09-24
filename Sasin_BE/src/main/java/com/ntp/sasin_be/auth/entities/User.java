@@ -39,6 +39,8 @@ public class User extends BaseEntity implements UserDetails {
 
     private boolean gender;
 
+    private String image;
+
     @Column(nullable = false)
     private String password;
 
