@@ -1,4 +1,4 @@
-package com.ntp.sasin_be.mapper;
+package com.ntp.sasin_be.auth.mapper;
 
 import com.ntp.sasin_be.auth.dto.UserDetailsDTO;
 import com.ntp.sasin_be.auth.entities.User;

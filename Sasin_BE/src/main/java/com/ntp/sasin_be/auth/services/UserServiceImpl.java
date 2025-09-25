@@ -3,9 +3,10 @@ package com.ntp.sasin_be.auth.services;
 import com.ntp.sasin_be.auth.dto.UserDetailsDTO;
 import com.ntp.sasin_be.auth.entities.User;
 import com.ntp.sasin_be.auth.repositories.UserDetailRepository;
-import com.ntp.sasin_be.mapper.UserMapper;
+import com.ntp.sasin_be.auth.mapper.UserMapper;
 import com.ntp.sasin_be.services.LocalUploadServiceImpl;
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,6 +18,7 @@ import java.security.Principal;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDetailsService userDetailsService;
@@ -27,8 +29,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private LocalUploadServiceImpl localUploadService;
 
-    @Autowired
-    private UserMapper userMapper;
+    private final UserMapper userMapper;
 
     @Override
     public User getCurrentUser(Principal principal) {
