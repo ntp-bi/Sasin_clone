@@ -22,10 +22,9 @@ public class ProductDTO {
     private String unit;
     private String image01;
     private String image02;
+    private String imagesJson;
 
     private Long categoryId;
-    private String categoryName;
-
     private Long supplierId;
-    private String supplierName;
+    private Long franchiseId;
 }
