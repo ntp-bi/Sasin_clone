@@ -15,5 +15,5 @@ public class CartDTO {
     private Long userId;
     private BigDecimal totalPrice;
     private CartStatus status;
-    private List<CartItemDTO> cartItems;
+    private List<CartItemDTO> items;
 }
