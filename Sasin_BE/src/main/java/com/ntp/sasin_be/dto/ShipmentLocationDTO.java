@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 public class ShipmentLocationDTO {
     private Long id;
     private Long shipmentId;
-    private Double lat;
-    private Double lng;
+    private Double latitude;
+    private Double longitude;
     private String address;
     private LocalDateTime recordedAt;
 }
