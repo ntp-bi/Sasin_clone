@@ -1,6 +1,6 @@
-package com.ntp.sasin_be.services;
+package com.ntp.sasin_be.services.impl;
 
-import com.ntp.sasin_be.services.impl.IUploadService;
+import com.ntp.sasin_be.services.IUploadService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

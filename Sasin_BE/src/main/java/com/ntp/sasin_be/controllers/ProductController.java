@@ -2,7 +2,7 @@ package com.ntp.sasin_be.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.ntp.sasin_be.dto.ProductDTO;
-import com.ntp.sasin_be.services.ProductServiceImpl;
+import com.ntp.sasin_be.services.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

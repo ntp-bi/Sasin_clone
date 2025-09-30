@@ -4,7 +4,7 @@ import com.ntp.sasin_be.auth.dto.UserDetailsDTO;
 import com.ntp.sasin_be.auth.entities.User;
 import com.ntp.sasin_be.auth.repositories.UserDetailRepository;
 import com.ntp.sasin_be.auth.mapper.UserMapper;
-import com.ntp.sasin_be.services.LocalUploadServiceImpl;
+import com.ntp.sasin_be.services.impl.LocalUploadServiceImpl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

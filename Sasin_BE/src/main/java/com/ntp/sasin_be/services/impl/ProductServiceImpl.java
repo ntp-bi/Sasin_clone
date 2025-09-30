@@ -1,4 +1,4 @@
-package com.ntp.sasin_be.services;
+package com.ntp.sasin_be.services.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +10,7 @@ import com.ntp.sasin_be.repositories.CategoryRepository;
 import com.ntp.sasin_be.repositories.RestaurantBranchRepository;
 import com.ntp.sasin_be.repositories.ProductRepository;
 import com.ntp.sasin_be.repositories.SupplierRepository;
-import com.ntp.sasin_be.services.impl.IProductService;
+import com.ntp.sasin_be.services.IProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -2,7 +2,7 @@ package com.ntp.sasin_be.controllers;
 
 import com.ntp.sasin_be.dto.CheckoutRequest;
 import com.ntp.sasin_be.dto.OrderDTO;
-import com.ntp.sasin_be.services.CheckoutServiceImpl;
+import com.ntp.sasin_be.services.impl.CheckoutServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,7 +1,7 @@
 package com.ntp.sasin_be.controllers;
 
 import com.ntp.sasin_be.dto.CategoryDTO;
-import com.ntp.sasin_be.services.CategoryServiceImpl;
+import com.ntp.sasin_be.services.impl.CategoryServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

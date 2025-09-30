@@ -1,4 +1,4 @@
-package com.ntp.sasin_be.services;
+package com.ntp.sasin_be.services.impl;
 
 import com.ntp.sasin_be.dto.CheckoutRequest;
 import com.ntp.sasin_be.dto.OrderDTO;
@@ -16,7 +16,7 @@ import com.ntp.sasin_be.repositories.CartItemRepository;
 import com.ntp.sasin_be.repositories.CartRepository;
 import com.ntp.sasin_be.repositories.OrderItemRepository;
 import com.ntp.sasin_be.repositories.OrderRepository;
-import com.ntp.sasin_be.services.impl.ICheckoutService;
+import com.ntp.sasin_be.services.ICheckoutService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -64,8 +64,8 @@ public class CheckoutServiceImpl implements ICheckoutService {
             orderItem.setProduct(cartItem.getProduct());
             orderItem.setQuantity(cartItem.getQuantity());
             orderItem.setUnitPrice(cartItem.getUnitPrice());
-            orderItem.setTotalPrice(orderItem.getUnitPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity())));
-            orderItem.setNote(orderItem.getNote());
+            orderItem.setTotalPrice(cartItem.getUnitPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity())));
+            orderItem.setNote(null);
 
             orderItems.add(orderItem);
             total = total.add(orderItem.getTotalPrice());

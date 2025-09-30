@@ -1,4 +1,4 @@
-package com.ntp.sasin_be.services.impl;
+package com.ntp.sasin_be.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.ntp.sasin_be.dto.ProductDTO;

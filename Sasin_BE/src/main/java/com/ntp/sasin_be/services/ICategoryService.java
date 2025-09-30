@@ -1,4 +1,4 @@
-package com.ntp.sasin_be.services.impl;
+package com.ntp.sasin_be.services;
 
 import com.ntp.sasin_be.dto.CategoryDTO;
 import org.springframework.data.domain.Page;

@@ -1,11 +1,11 @@
-package com.ntp.sasin_be.services;
+package com.ntp.sasin_be.services.impl;
 
 import com.ntp.sasin_be.dto.CategoryDTO;
 import com.ntp.sasin_be.entities.Category;
 import com.ntp.sasin_be.exceptions.ResourceNotFoundException;
 import com.ntp.sasin_be.mapper.CategoryMapper;
 import com.ntp.sasin_be.repositories.CategoryRepository;
-import com.ntp.sasin_be.services.impl.ICategoryService;
+import com.ntp.sasin_be.services.ICategoryService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
