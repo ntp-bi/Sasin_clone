@@ -36,7 +36,7 @@ public class CartServiceImpl implements ICartService {
         Cart cart = cartRepository.findByUserIdAndStatus(userId, CartStatus.ACTIVE)
                 .orElseGet(() -> {
                     Cart newCart = new Cart();
-                    newCart.setUser(userDetailRepository.findById(userId).get());
+                    newCart.setUser(userDetailRepository.getReferenceById(userId));
                     newCart.setStatus(CartStatus.ACTIVE);
                     newCart.setTotalPrice(BigDecimal.ZERO);
 
@@ -49,13 +49,17 @@ public class CartServiceImpl implements ICartService {
     @Override
     @Transactional
     public CartDTO addToCart(Long userId, Long productId, Integer quantity) {
+        if (quantity == null || quantity <= 0) {
+            throw new IllegalArgumentException("Quantity must be greater than zero");
+        }
+
         Product product = productRepository.findById(productId)
                 .orElseThrow(() -> new ResourceNotFoundException("Product not found"));
 
         Cart cart = cartRepository.findByUserIdAndStatus(userId, CartStatus.ACTIVE)
                 .orElseGet(() -> {
                     Cart newCart = new Cart();
-                    newCart.setUser(userDetailRepository.findById(userId).get());
+                    newCart.setUser(userDetailRepository.getReferenceById(userId));
                     newCart.setStatus(CartStatus.ACTIVE);
                     newCart.setTotalPrice(BigDecimal.ZERO);
 
@@ -88,7 +92,6 @@ public class CartServiceImpl implements ICartService {
 
         return cartMapper.toCartDto(cart);
     }
-
 
     @Override
     @Transactional
