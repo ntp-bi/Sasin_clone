@@ -4,6 +4,9 @@ import com.ntp.sasin_be.dto.OrderDTO;
 import com.ntp.sasin_be.enums.OrderStatus;
 import com.ntp.sasin_be.services.impl.OrderServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -28,8 +31,10 @@ public class OrderController {
 
     @GetMapping("/admin/orders")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<List<OrderDTO>> getAllOrders() {
-        return ResponseEntity.ok(orderService.getAllOrders());
+    public ResponseEntity<Page<OrderDTO>> getAllOrders(@RequestParam(defaultValue = "0") int page,
+                                                       @RequestParam(defaultValue = "10") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return ResponseEntity.ok(orderService.getAllOrders(pageable));
     }
 
     @PutMapping("/admin/order/status/{orderId}")

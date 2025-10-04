@@ -9,6 +9,8 @@ import com.ntp.sasin_be.repositories.OrderRepository;
 import com.ntp.sasin_be.services.IOrderService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,11 +40,8 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public List<OrderDTO> getAllOrders() {
-        return orderRepository.findAll()
-                .stream()
-                .map(orderMapper::toOrderDTO)
-                .collect(Collectors.toList());
+    public Page<OrderDTO> getAllOrders(Pageable pageable) {
+        return orderRepository.findAll(pageable).map(orderMapper::toOrderDTO);
     }
 
     @Override
